@@ -9,17 +9,17 @@ import { CustomComponent } from '../components/custom/custom.component';
 
 export class HomePage implements OnInit {
 
-  myItems = "Assign via @Input";
+  myItems = "Assigned via @Input";
 
   @ViewChild(CustomComponent, {static: true}) child: CustomComponent;
 
   constructor() { }
 
   ngOnInit(){
-    this.child.myProducts();
+    this.child.myProducts(12);
   }
 
-  assignProduct(data){
+  valueFromOutput(data){
     console.log(data);
   }
 }

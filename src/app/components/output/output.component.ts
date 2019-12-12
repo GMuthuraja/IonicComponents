@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-output',
@@ -6,13 +6,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./output.component.scss'],
 })
 
-export class OutputComponent {
+export class OutputComponent implements OnInit {
 
   @Output() public assign = new EventEmitter();
+  @Input() public itemname: string;
 
   constructor() { }
 
-  assignProducts(){
+  ngOnInit() {
+    console.log(this.itemname);
+  }
+
+  assignProducts() {
     this.assign.emit('Emit from Output Component');
   }
 

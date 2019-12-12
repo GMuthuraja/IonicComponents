@@ -16,8 +16,8 @@ export class CustomComponent implements OnInit {
     console.log(this.itemname);
   }
 
-  myProducts(){
-    console.log("Invoked from Viewchild");
+  myProducts(id) {
+    console.log(id);
   }
 
 }
